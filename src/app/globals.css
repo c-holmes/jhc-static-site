@@ -13,7 +13,7 @@
 }
 
 @theme {
-  --color-jhcteal-100: oklch(0.66 0.11 185, 1);
+  --color-jhcteal-100: oklch(0.66 0.11 185);
 }
 
 body {
