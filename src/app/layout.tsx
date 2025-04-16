@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import { Nav } from "./components/Nav";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Indie_Flower } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const indieFlower = Indie_Flower({
+  variable: "--font-indie-flower",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400"], // Indie Flower only supports 400 weight
 });
 
 export const metadata: Metadata = {
@@ -26,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${indieFlower.variable} antialiased`}>
         <Nav />
         {children}
         <Footer />
