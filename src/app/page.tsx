@@ -19,7 +19,7 @@ const images = [
 
 export default function Home() {
   return (
-    <main className="max-w-screen-lg mx-auto p-4 font-[family-name:var(--font-geist-sans)]">
+    <main>
       <div>
         <Image
           src="/home-banner.jpg"

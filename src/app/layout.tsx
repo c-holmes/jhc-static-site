@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${indieFlower.variable} antialiased`}>
         <Nav />
-        {children}
+        <div className="max-w-screen-lg mx-auto p-4 font-[family-name:var(--font-geist-sans)]">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
