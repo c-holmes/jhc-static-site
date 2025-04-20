@@ -1,5 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImageGridWithModal from "./components/ImageGridWithModal";
+
+const images = [
+  {
+    src: "/vo-rebecca-sutherns-zoom-but-better.jpg",
+    alt: "Rebecca Sutherns - Zoom but Better",
+  },
+  {
+    src: "/vo-empathy-elliott-masie.jpg",
+    alt: "Empathy - Elliott Masie",
+  },
+  {
+    src: "/vo-carizon-final.jpg",
+    alt: "Carizon Strategic Plan 2018-2022",
+  },
+];
 
 export default function Home() {
   return (
@@ -19,32 +35,7 @@ export default function Home() {
           recall as people apply concepts in life or work.
         </h1>
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <li className="border border-gray-300">
-          <Image
-            src="/vo-rebecca-sutherns-zoom-but-better.jpg"
-            alt="Rebecca Sutherns - Zoom but Better"
-            width={500}
-            height={500}
-          />
-        </li>
-        <li className="border border-gray-300">
-          <Image
-            src="/vo-empathy-elliott-masie.jpg"
-            alt="Empathy - Elliott Masie"
-            width={500}
-            height={500}
-          />
-        </li>
-        <li className="border border-gray-300">
-          <Image
-            src="/vo-carizon-final.jpg"
-            alt="Carizon Strategic Plan 2018-2022"
-            width={500}
-            height={500}
-          />
-        </li>
-      </ul>
+      <ImageGridWithModal images={images} />
       <div className="py-12 text-center">
         <Link
           key={"/visual-offerings"}
