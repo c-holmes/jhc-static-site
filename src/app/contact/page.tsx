@@ -15,7 +15,7 @@ export default function About() {
         </div>
         <div>
           <h1 className="text-4xl font-bold mb-4 text-jhcteal-100">
-            Let's Get in Touch
+            Let&apos;s Get in Touch
           </h1>
           <p>
             If you would like to get in touch with me, please feel free to reach
