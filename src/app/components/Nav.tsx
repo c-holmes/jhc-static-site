@@ -67,7 +67,7 @@ export function Nav() {
           className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-dropdown"
         >
-          <ul className="flex flex-col font-medium text-lg p-4 md:p-0 mt-4 bg-black md:space-x-8 md:flex-row md:mt-0 md:bg-white  ">
+          <ul className="flex flex-col font-medium text-lg md:text-xl p-4 md:p-0 mt-4 bg-black md:space-x-8 md:flex-row md:mt-0 md:bg-white  ">
             {Object.entries(navItems).map(([path, { name }]) => {
               const isActive = pathname === path;
               return (
