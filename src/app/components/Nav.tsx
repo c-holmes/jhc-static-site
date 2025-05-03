@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const navItems = {
   "/": {
@@ -22,14 +23,24 @@ const navItems = {
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [currentPath, setCurrentPath] = useState("");
+
+  const updateActivePath = (path: string) => {
+    setCurrentPath(path);
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
 
   return (
     <nav className="bg-white">
       <div className="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            src="/logo.png"
+            src={`${basePath}/logo.png`}
             alt="Janet Holmes Consulting Logo"
             width={175}
             height={500}
@@ -69,11 +80,14 @@ export function Nav() {
         >
           <ul className="flex flex-col font-medium text-lg md:text-xl p-4 md:p-0 mt-4 bg-black md:space-x-8 md:flex-row md:mt-0 md:bg-white  ">
             {Object.entries(navItems).map(([path, { name }]) => {
-              const isActive = pathname === path;
+              const isActive = currentPath === `${basePath}${path}`;
+
+              // console.log("Path:", path);
               return (
                 <Link
                   key={path}
                   href={path}
+                  onClick={() => updateActivePath(`${basePath}${path}`)}
                   className={`block py-2 px-3 rounded-sm md:p-0 hover:underline ${
                     isActive
                       ? "bg-jhcteal-100 md:bg-transparent md:text-jhcteal-100"

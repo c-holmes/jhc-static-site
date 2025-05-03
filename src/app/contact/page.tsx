@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function About() {
   return (
     <div className="py-8">
@@ -7,8 +9,8 @@ export default function About() {
         <div>
           <Image
             className="hidden md:block"
-            src="/globe.jpg"
-            alt="Janet Holmes"
+            src={`${basePath}/globe.jpg`}
+            alt="Contact Graphic"
             height={500}
             width={500}
           />

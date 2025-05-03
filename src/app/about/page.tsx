@@ -1,19 +1,21 @@
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function About() {
   return (
     <div className="py-8">
       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-8">
         <Image
           className="border-gray-300 border hidden md:block"
-          src="/janet-holmes.jpg"
+          src={`${basePath}/janet-holmes.jpg`}
           alt="Janet Holmes"
           height={500}
           width={500}
         />
         <Image
           className="border-gray-300 border rounded-full md:hidden max-w-[200px] mx-auto"
-          src="/janet-holmes-mobile.jpg"
+          src={`${basePath}/janet-holmes-mobile.jpg`}
           alt="Janet Holmes"
           height={500}
           width={500}
@@ -55,7 +57,7 @@ export default function About() {
           <li className="my-2 md:mb-0">
             <Image
               className="h-20 object-contain"
-              src="/ifvp-member-badge.png"
+              src={`${basePath}/ifvp-member-badge.png`}
               alt="ifvp member badge"
               height={500}
               width={500}
@@ -64,7 +66,7 @@ export default function About() {
           <li className="my-2 md:mb-0">
             <Image
               className="h-20 object-contain"
-              src="/i4pl+member-logo-2020-eng.jpg"
+              src={`${basePath}/i4pl+member-logo-2020-eng.jpg`}
               alt="i4pl member logo"
               height={500}
               width={500}
@@ -73,7 +75,7 @@ export default function About() {
           <li className="my-2 md:mb-0">
             <Image
               className="h-18 object-contain"
-              src="/disc-certified-facilitator.png"
+              src={`${basePath}/disc-certified-facilitator.png`}
               alt="disc certified facilitator"
               height={500}
               width={500}

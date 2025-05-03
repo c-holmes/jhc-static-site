@@ -2,17 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import ImageGridWithModal from "./components/ImageGridWithModal";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const images = [
   {
-    src: "/vo-rebecca-sutherns-zoom-but-better.jpg",
+    src: `${basePath}/vo-rebecca-sutherns-zoom-but-better.jpg`,
     alt: "Rebecca Sutherns - Zoom but Better",
   },
   {
-    src: "/vo-empathy-elliott-masie.jpg",
+    src: `${basePath}/vo-empathy-elliott-masie.jpg`,
     alt: "Empathy - Elliott Masie",
   },
   {
-    src: "/vo-carizon-final.jpg",
+    src: `${basePath}/vo-carizon-final.jpg`,
     alt: "Carizon Strategic Plan 2018-2022",
   },
 ];
@@ -22,7 +24,7 @@ export default function Home() {
     <main>
       <div>
         <Image
-          src="/home-banner.jpg"
+          src={`${basePath}/home-banner.jpg`}
           alt="Visual Offerings"
           width={1024}
           height={500}

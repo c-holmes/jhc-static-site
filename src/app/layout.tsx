@@ -4,6 +4,8 @@ import { Indie_Flower } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const indieFlower = Indie_Flower({
   variable: "--font-indie-flower",
   subsets: ["latin"],
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "I am a visual practitioner who uses graphic recording and graphic facilitation to help teams and organizations make sense of their conversations. I have a passion for helping people understand and communicate complex ideas through visual means.",
   icons: {
-    icon: "/jhc-favicon.ico",
+    icon: `${basePath}/jhc-favicon.ico`,
   },
   openGraph: {
     title: "Janet Holmes Consulting",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Janet Holmes Consulting",
     images: [
       {
-        url: "/jhc-social-share.jpg",
+        url: `${basePath}/jhc-social-share.jpg`,
         width: 1200,
         height: 630,
         alt: "Janet Holmes Consulting - Visual Practitioner",
